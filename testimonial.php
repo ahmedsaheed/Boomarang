@@ -39,7 +39,11 @@ include_once('subHeader.php');
             </div>
         </div>
     </div>
+    <form action="testimonial_add.php">
+        <input type="submit" value="Write your Testimonial" class="hero-btn blue-btn">
+    </form>
 </section>
+
 
 
 <?php

@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+//Include connection file
+include_once '../../../include/connection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +27,13 @@
                         <li><a href="services.php">SERVICES & FACILITIES</a></li>
                         <li><a href="testimonial.php">TESTIMONIALS</a></li>
                         <li><a href="contactUs.php">CONTACT US</a></li>
-                        <li><a href="login.php">LOGIN</a></li>
+                        <?php if (isset($_SESSION['user_email'])) { 
+                            // if user logged in, give access to resources...
+                            echo '<li><a href="logout.php">LOGOUT</a></li>';
+                            } else {
+                            echo '<li><a href="login.php">LOGIN</a></li>'; 
+                            // do somethingmeaningful here
+                            }?>
 
                     </ul>
                 </div>

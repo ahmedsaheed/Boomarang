@@ -12,27 +12,26 @@ include_once('subHeader.php');
 <!-------------------------- Course  ---------------->
 <section class="course">
     <h1>Services We Offer</h1>
-    <p>There is no correct way to skate, but we can teach you the basics.</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
 
     <div class="row">
         <div class="course-col">
-            <h3>Street skateboarding</h3>
-            <p>Street skateboarding is a skateboarding discipline which focuses on flatground tricks,
-            grinds, slides and aerials within urban environments and public spaces. Street 
-            skateboarders meet, skate and hang out in and around urban areas referred to as 
-            "spots", which are commonly streets, plazas or industrial areas.</p>
+            <h3>Service 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div class="course-col">
-            <h3>Vert skateboarding</h3>
-            <p>Vert skateboarding, short for vertical skateboarding, is the act of riding a skateboard
-            on a skate ramp or other incline and involves the skateboarder transitioning from the
-            horizontal plane to the vertical plane in order to perform skateboarding tricks.</p>
+            <h3>Service 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div class="course-col">
-            <h3>Freestyle skateboarding</h3>
-            <p>Freestyle skateboarding (or freestyle) is one of the oldest styles of skateboarding 
-            and was intermittently popular from the 1960s until the early 1990s, when the final 
-            large-scale professional freestyle skateboarding competition was held.</p>
+            <h3>Service 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </div>
 </section>
@@ -40,24 +39,24 @@ include_once('subHeader.php');
 <!-------------------------- facilities  ---------------->
 
 <section class="facilities">
-    <h1>Our facilities</h1>
-    <p>From parks to stores, we have everything you need.</p>
+    <h1>Our Facilities</h1>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
 
     <div class="row">
         <div class="facilities-col">
-            <img src="images/facility1.jpg">
-            <h3>Classrooms</h3>
-            <p>Just perfect for practicing street skate.</p>
+            <a href="classroom.php"><img src="images/facility1.jpg"></a>
+            <a href="classroom.php"><h3>Classrooms</h3></a>
+            <p>In ornare quam viverra orci sagittis eu volutpat.</p>
         </div>
         <div class="facilities-col">
-            <img src="images/facility2.jpg">
-            <h3>Garden</h3>
-            <p>Here you can land your first 900.</p>
+            <a href="garden.php"><img src="images/facility2.jpg"></a>
+            <a href="garden.php"><h3>Garden</h3></a>
+            <p>In ornare quam viverra orci sagittis eu volutpat.</p>
         </div>
         <div class="facilities-col">
             <img src="images/facility3.jpg">
             <h3>Kitchen</h3>
-            <p>The best brands are here.</p>
+            <p>In ornare quam viverra orci sagittis eu volutpat.</p>
         </div>
     </div>
 </section>

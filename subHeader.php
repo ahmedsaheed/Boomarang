@@ -32,13 +32,24 @@ include_once '../../../include/connection.php'; ?>
                 <li><a href="services.php">SERVICES & FACILITIES</a></li>
                 <li><a href="testimonial.php">TESTIMONIALS</a></li>
                 <li><a href="contactUs.php">CONTACT US</a></li>
-                <?php if (isset($_SESSION['user_email'])) { 
+                <?php 
+                if (isset($_SESSION['user_email'])) { 
                     // if user logged in, give access to resources...
+                    echo '<li><a href="day_details.php">DAY DETAILS</a></li>';
                     echo '<li><a href="logout.php">LOGOUT</a></li>';
-                    } else {
+                    // if user logged in as admin, give admin privilegies
+                    if(($_SESSION['user_email'] == 'admin@boomerang.com')){
+                        echo '<li><a href="index_edit.php">INDEX EDIT</a></li>';
+                        echo '<li><a href="registration_edit.php">REGISTRATION EDIT</a></li>';
+                        echo '<li><a href="day_details_edit.php">DAY DETAILS EDIT</a></li>';
+                        echo '<li><a href="testimonial_manage.php">TESTIMONIAL MANAGE</a></li>';
+                        echo '<li><a href="contact_us_manage">CONTACT US MANAGE</a></li>';
+                    }
+                }
+                //display login page only if not logged in
+                else {
                     echo '<li><a href="login.php">LOGIN</a></li>'; 
-                    // do somethingmeaningful here
-                    }?>
+                }?>
                 
             </ul>
         </div>

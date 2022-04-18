@@ -35,7 +35,7 @@ $password = '';
 <section class="main">
     <div class="box-form">
         <h1>Login</h1>
-        <p>Some pages need a logged user to be accessed.</p>
+        <p>Some pages need a logged user or admin to be accessed.</p>
         <form action="login.php" method="post">
             
             <!------------email----------->
@@ -90,12 +90,10 @@ $password = '';
                     $row = mysqli_fetch_array($result);
                     // set session variables...
                     $_SESSION['user_email'] = $row['email'];
+                    $_SESSION['fName'] = $row['first_name'];
                     $_SESSION['name'] = $row['first_name'].' '.$row['last_name'];
 
-
-
-
-
+                    
                     echo('you are logged in as '.$_SESSION['name']);
                     
 

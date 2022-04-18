@@ -51,21 +51,21 @@ $userName = '';
         <div class="about-col">
         <h1>Childcare Information</h1>
         <h2>Babies</h2>
-        <p>Online-Skate is an internationally known skateboard company founded in 2009.
-            Following the Good Environmental Practice Guidelines, Online-Skate only 
-            purchases USA hard rock maple wood from controlled forests. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <h2>Wobblers</h2>
-        <p>Online-Skate is an internationally known skateboard company founded in 2009.
-            Following the Good Environmental Practice Guidelines, Online-Skate only 
-            purchases USA hard rock maple wood from controlled forests.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <h2>Toddlers </h2>
-        <p>Online-Skate is an internationally known skateboard company founded in 2009.
-            Following the Good Environmental Practice Guidelines, Online-Skate only 
-            purchases USA hard rock maple wood from controlled forests.</p>    
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
         <h2>Preschool</h2>
-        <p>Online-Skate is an internationally known skateboard company founded in 2009.
-            Following the Good Environmental Practice Guidelines, Online-Skate only 
-            purchases USA hard rock maple wood from controlled forests.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div class="about-col">
             <img src="images/childCareInfo.jpg">

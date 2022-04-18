@@ -54,7 +54,7 @@ include_once('subHeader.php');
             <p>In ornare quam viverra orci sagittis eu volutpat.</p>
         </div>
         <div class="facilities-col">
-            <img src="images/facility3.jpg">
+            <a href="kitchen.php"><img src="images/facility3.jpg"></a>
             <a href="kitchen.php"><h3>Kitchen</h3></a>
             <p>In ornare quam viverra orci sagittis eu volutpat.</p>
         </div>

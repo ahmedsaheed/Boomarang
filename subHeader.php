@@ -22,7 +22,7 @@ include_once '../../../include/connection.php'; ?>
 <body>
 <section class="sub-header">
     <nav>
-        <a href="home.html"><img src="images/logo.PNG"></a>
+        <a href="index.php"><img src="images/logo.PNG"></a>
         <div class="nav-links" id="navLinks">
             <i class="fas fa-times" onclick="hideMenu()"></i>
             <ul>

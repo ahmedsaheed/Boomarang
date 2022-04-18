@@ -12,6 +12,7 @@ include_once '../../../include/connection.php'; ?>
     <script src="https://kit.fontawesome.com/28528889ff.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
     <script defer src="script.js"></script>
     <title>index</title>
 </head>
@@ -44,7 +45,7 @@ include_once '../../../include/connection.php'; ?>
             
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     <br>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a href="about.html" class="hero-btn">Find Out More</a>
+                <a href="services.php" class="hero-btn">Find Out More</a>
             </div>
 
         </section>

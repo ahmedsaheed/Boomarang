@@ -15,7 +15,7 @@ include_once('subHeader.php');
     <p>For us, your opinion counts.</p>
     <div class="row">
         <div class="testimonials-col">
-            <img src="images/person1.jpg">
+            <img src="images/person2.jpg">
             <div>
                 <p>Online-Skate is just the best! I bought my board there last week and it is really good.</p>
                     <h3>Joe Marriott</h3>

@@ -11,6 +11,7 @@ include_once '../../../include/connection.php'; ?>
     <link href="style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/28528889ff.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
     <script defer src="script.js"></script>
     <title><?php if(isset($pageTitle))echo($pageTitle);?></title>

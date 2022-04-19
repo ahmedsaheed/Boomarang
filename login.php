@@ -86,23 +86,37 @@ $password = '';
                 $query = "SELECT * FROM parent WHERE email='$mail'
                 AND password='$password';";
                 $result = @mysqli_query($conn, $query);
+
                 if(mysqli_num_rows($result) == 1) {
                     $row = mysqli_fetch_array($result);
                     // set session variables...
                     $_SESSION['user_email'] = $row['email'];
                     $_SESSION['fName'] = $row['first_name'];
                     $_SESSION['name'] = $row['first_name'].' '.$row['last_name'];
-
-                    
                     echo('you are logged in as '.$_SESSION['name']);
+                    $emailLogged = $_SESSION['user_email'];
+                    
+                    //gets child data if not admin
+                    if(!($emailLogged == 'admin@boomerang.com')){
+                        $query = "SELECT * FROM child WHERE parent_email='$emailLogged';";
+                        $result = @mysqli_query($conn, $query);
+                        
+                        if(mysqli_num_rows($result) == 1) {
+                            $row = mysqli_fetch_array($result);
+                            // set session variables...
+                            $_SESSION['childID'] = $row['child_ID'];
+                            $_SESSION['childName'] = $row['first_name'].' '.$row['last_name'];
+                            echo '. Your child name is '.$_SESSION['childName'];
+                        }
+                        
+                    }
                     
 
+                } 
+                else {
+                echo "<h2>Error!</h2> <h3>The username and password are incorrect!</h3>";
+                }
 
-
-                } else {
-                echo "<h2>Error!</h2> <h3>The username and
-                password are incorrect!</h3>";
-                }                
             }
         }
         ?>

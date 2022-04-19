@@ -42,7 +42,6 @@ include_once('subHeader.php');
     <form action="testimonial_add.php">
         <input type="submit" value="Write your Testimonial" class="hero-btn blue-btn">
     </form>
-    <br><br>
 </section>
 
 

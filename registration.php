@@ -43,6 +43,31 @@ $childLastName = '';
 $mail = '';
 $password = '';
 $userName = '';
+
+
+//fetch fee information
+$query = "SELECT * FROM fee where name = 'babies';";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$feePriceBaby = $row['price'];
+
+$query = "SELECT * FROM fee where name = 'wobblers';";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$feePriceWobbler = $row['price'];
+
+$query = "SELECT * FROM fee where name = 'Toddlers';";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$feePriceToddlers = $row['price'];
+
+$query = "SELECT * FROM fee where name = 'Preschool';";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$feePricePreschool = $row['price'];
+
+
+
 ?>
 
 <!-------------------------- Childcare Info  ---------------->
@@ -51,18 +76,22 @@ $userName = '';
         <div class="about-col">
         <h1>Childcare Information</h1>
         <h2>Babies</h2>
+        <h3>Day Fee: <?php echo $feePriceBaby?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <h2>Wobblers</h2>
+        <h3>Day Fee: <?php echo $feePriceWobbler?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <h2>Toddlers </h2>
+        <h3>Day Fee: <?php echo $feePriceToddlers?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
         <h2>Preschool</h2>
+        <h3>Day Fee: <?php echo $feePricePreschool?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

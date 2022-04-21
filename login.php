@@ -51,7 +51,7 @@ $password = '';
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$mailSet)echo'<p>Invalid email Input!</p>';
+                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
                 }?>
             </div>
 
@@ -68,11 +68,13 @@ $password = '';
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$passwordSet)echo'<p>Invalid password Input!</p>';
+                    if(!$passwordSet)echo'<p style="color: red;">Invalid password Input!</p>';
                 }?>
             </div>
                                  
             <button type="submit" class="hero-btn ">Login</button>
+            <p> Don't have an account yet! </p>
+            <a href="registration.php"><p style="color:black;">Click here to register</p></a>
         </form>
         
         <!------------Database interaction----------->
@@ -114,7 +116,7 @@ $password = '';
 
                 } 
                 else {
-                echo "<h2>Error!</h2> <h3>The username and password are incorrect!</h3>";
+                echo '<h2 style="color: red;">Error!</h2> <h3 style="color: red;">The username and password are incorrect!</h3>';
                 }
 
             }

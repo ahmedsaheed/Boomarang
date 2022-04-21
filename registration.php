@@ -121,7 +121,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$parentFirstNameSet)echo'<p>Invalid name Input!</p>';
+                    if(!$parentFirstNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
 
@@ -138,7 +138,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$parentLastName)echo'<p>Invalid name Input!</p>';
+                    if(!$parentLastName)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
             
@@ -156,7 +156,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$mailSet)echo'<p>Invalid email Input!</p>';
+                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
                 }?>
             </div>
 
@@ -174,7 +174,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$passwordSet)echo'<p>Invalid password Input! Try something stronger 8-12 in length.</p>';
+                    if(!$passwordSet)echo'<p style="color: red;">Invalid password Input! Try something stronger 8-12 in length.</p>';
                 }?>
             </div>
 
@@ -192,7 +192,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$childFirstNameSet)echo'<p>Invalid name Input!</p>';
+                    if(!$childFirstNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
 
@@ -210,7 +210,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$childLastNameSet)echo'<p>Invalid name Input!</p>';
+                    if(!$childLastNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
 
@@ -231,7 +231,7 @@ $feePricePreschool = $row['price'];
                 }
                 else{
                     if (!empty($_POST)){
-                        echo '<p>Invalid category selected!<p>';}
+                        echo '<p style="color: red;">Invalid category selected!<p>';}
                     }
                 ?>
             </div>
@@ -253,7 +253,7 @@ $feePricePreschool = $row['price'];
                 }
                 else{
                     if (!empty($_POST)){
-                        echo '<p>Invalid day care selected!<p>';}
+                        echo '<p style="color: red;">Invalid day care selected!<p>';}
                     }
                 ?>
             </div>  
@@ -279,8 +279,8 @@ $feePricePreschool = $row['price'];
                         while($row = mysqli_fetch_array($result)){
                             $emailInTable = $row['email'];
                             if($emailInTable == $mail){
-                                echo "<div class='invalid'><h2>Registration failed!</h2></div>";
-                                echo "<div class='invalid'>Email already registered</div>";
+                                echo '<div class="invalid"><h2 style="color: red;">Registration failed!</h2></div>';
+                                echo '<div class="invalid" style="color: red;">Email already registered</div>';
                                 $duplicatedMail = true;
                             } 
                         }

@@ -1,0 +1,101 @@
+/*----------------------------------------------------- css Grid   ----------------------------------------------   */
+.GridBrick5 {
+    grid-column: 1/5;
+    border-top: 2px solid white;
+}
+
+.GridBrick6 {
+    grid-column: 1/5;
+    grid-row: 4/4;
+    opacity: 0.7;
+    background-size: cover;
+    filter: drop-shadow(30px 30px 30px black);
+}
+
+.GridBrick6Sub{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/5;
+    grid-row: 4/4;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/*----------------------------------------------------- css Grid   ----------------------------------------------   */
+
+
+/*----------------------------------------------------- Gallery   ----------------------------------------------   */
+
+#GalleryOuterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    min-height: 500px;
+    position: relative;
+    overflow: visible;
+    perspective: 700px;
+    transform-style: preserve-3d;
+
+
+}
+
+#GalleryInnerContainer, #CardStack {
+    position: relative;
+    display: flex;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+
+}
+
+
+#GalleryInnerContainer img {
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px lightblue solid;
+    filter: drop-shadow(20px 20px 20px black);
+}
+
+#GalleryInnerContainer p {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(90deg);
+}
+
+#Base {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(90deg);
+}
+
+
+@keyframes spin {
+    from{
+        transform: rotateY(0deg);
+    } to{
+          transform: rotateY(360deg);
+      }
+}
+
+@keyframes spinRevert {
+    from{
+        transform: rotateY(360deg);
+    } to{
+          transform: rotateY(0deg);
+      }
+}
+
+
+/*----------------------------------------------------- Gallery   ----------------------------------------------   */
+

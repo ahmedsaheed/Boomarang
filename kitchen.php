@@ -5,11 +5,11 @@ function customPageHeader(){?>
 
 <?php }
 include_once('subHeader.php');
-// if (!isset($_SESSION['user_email'])) { 
-//     // if user not logged in,
-//     header("location: login.php");
-//     exit;
-//     }
+if (!isset($_SESSION['user_email'])) { 
+    // if user not logged in,
+    header("location: login.php");
+    exit;
+    }
 ?>
 
 <!DOCTYPE html>

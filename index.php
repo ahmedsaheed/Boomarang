@@ -14,7 +14,7 @@ include_once '../../../include/connection.php'; ?>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/images/logo.ico">
     <script defer src="script.js"></script>
-    <title>index</title>
+    <title>Boomerang</title>
 </head>
 <body>
     <section class="header">

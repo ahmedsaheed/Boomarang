@@ -58,7 +58,7 @@ if (!isset($_SESSION['user_email'])) {
             </div>
         </div>
         <br><br><br><br><br><br><br><br>
-        <script src="app.js"></script>
+        <!-- <script src="app.js"></script> -->
 </body>
 </html>
 <?php

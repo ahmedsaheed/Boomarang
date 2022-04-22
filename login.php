@@ -109,11 +109,12 @@ $password = '';
                             $_SESSION['childID'] = $row['child_ID'];
                             $_SESSION['childName'] = $row['first_name'].' '.$row['last_name'];
                             echo '. Your child name is '.$_SESSION['childName'];
+                            echo "<script>parent.self.location='index.php';</script>";   
                         }
                         
-                    }
-                    
-
+                    }else{echo "<script>parent.self.location='index.php';</script>";}
+               
+                      
                 } 
                 else {
                 echo '<h2 style="color: red;">Error!</h2> <h3 style="color: red;">The username and password are incorrect!</h3>';

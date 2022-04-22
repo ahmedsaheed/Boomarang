@@ -1,7 +1,8 @@
 <?php 
 session_start(); 
 //Include connection file
-include_once '../../../include/connection.php'; ?>
+// include_once '../../../include/connection.php';
+include_once 'connection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

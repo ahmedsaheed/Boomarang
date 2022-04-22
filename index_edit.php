@@ -62,7 +62,7 @@ $picture = '';
                         }
                         else{
                             if (!empty($_POST['id'])){
-                                echo '<p>Invalid number input!<p>';}
+                                echo '<p style="color:red;>Invalid number input!<p>';}
                             }
                         ?>
                     </div>
@@ -81,7 +81,7 @@ $picture = '';
                     <div class='invalid'>
                         <?php 
                         if (!empty($_POST)){
-                            if(!$title)echo'<p>Invalid title Input!</p>';
+                            if(!$title)echo'<p style="color:red;>Invalid title Input!</p>';
                         }?>
                     </div>
 
@@ -97,7 +97,7 @@ $picture = '';
                     <div class='invalid'>
                         <?php 
                         if (!empty($_POST)){
-                            if(!$messageSet)echo'<p>Invalid message Input!</p>';
+                            if(!$messageSet)echo'<p style="color:red;>Invalid message Input!</p>';
                         }?>
                     </div>
 
@@ -112,7 +112,7 @@ $picture = '';
                     <div class='invalid'>
                         <?php 
                         if (!empty($_POST)){
-                            if(!$picture)echo'<p>Invalid picture path Input!</p>';
+                            if(!$picture)echo'<p style="color:red;">Invalid picture path Input!</p>';
                         }?>
                     </div>
 

@@ -259,7 +259,7 @@ $feePricePreschool = $row['price'];
             </div>  
             
             
-            <button type="submit" class="hero-btn ">Register</button>
+            <button type="submit" class="hero-btn ">Register</button><p></p>
         </form>
         
 
@@ -316,7 +316,7 @@ $feePricePreschool = $row['price'];
         ?>
         <!------------END Database interaction----------->
     </div>
-</section>
+</section><br>
 
 
 

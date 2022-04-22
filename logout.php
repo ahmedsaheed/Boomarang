@@ -15,13 +15,16 @@ include_once('subHeader.php');
         if (isset($_SESSION['user_email'])) {
         session_unset();
         session_destroy();
-        echo '<h1>Logged out successfully</h1>';
+        echo '<h1>Logged out successfully</h1>';  
+        echo "<script>parent.self.location='index.php';</script>";      
         } else {
         echo "<h1>Already logged out!</h1>";
-        }?>
+        }
+        ?>
         
     </div>
 </section>
+
 
 
 

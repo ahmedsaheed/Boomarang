@@ -7,7 +7,7 @@ function customPageHeader(){?>
 include_once('subHeader.php');
 if (!isset($_SESSION['user_email'])) { 
     // if user not logged in,
-    header("location: login.php");
+    header("location: logins.php");
     exit;
     }
 ?>

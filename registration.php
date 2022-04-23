@@ -43,6 +43,7 @@ $childLastName = '';
 $mail = '';
 $password = '';
 $userName = '';
+$code=substr(md5(mt_rand()),0,15);
 
 
 //fetch fee information
@@ -289,30 +290,90 @@ $feePricePreschool = $row['price'];
                     //if email is unique, run query
                     if(!$duplicatedMail){
                         
+                        //Run command to create intent table
+                        // $sql = "CREATE TABLE `parent` (
+                        //     `email` varchar(50) NOT NULL,
+                        //     `first_name` varchar(30) NOT NULL,
+                        //     `last_name` varchar(30) NOT NULL,
+                        //     `password` varchar(20) NOT NULL,
+                        //     `code` text NOT NULL,
+                        //     PRIMARY KEY(email)
+                        //   );";
+
                         //statement to insert parent data into database
-                        $sql = "INSERT INTO parent (email, first_name, last_name, password)
-                        VALUES ('$mail', '$parentFirstName', '$parentLastName', '$password');";
+                        $sql = "INSERT INTO intent (email, first_name, last_name, password, code)
+                        VALUES ('$mail', '$parentFirstName', '$parentLastName', '$password', '$code');";
                         mysqli_query($conn,$sql);
+                        $db_id=mysqli_insert_id(conn);
+
+                        $ver = mysqli_query($conn, $query);
+                        if(!$ver)
+                        {
+                            echo mysqli_error($conn);
+                            die();
+                        }
+                        else{
+                            echo "Query succesfully executed!";
                         
-                        //statement to insert child data into database
-                        $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
-                        VALUES ('$mail', '$childFirstName', '$childLastName', '$category', '$dayCare');";
-                        mysqli_query($conn,$sql);
-                        mysqli_close($conn);
+                        
+                            //statement to insert child data into database
+                            // $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
+                            // VALUES ('$mail', '$childFirstName', '$childLastName', '$category', '$dayCare');";
+                            // mysqli_query($conn,$sql);
+                            // mysqli_close($conn);
 
-                        //Send confirmation email
-                        $subject = "Boomerang Childcare";
-                        $message = "Thanks for registering at Boomerang Childcare, we will be in touch soon.";
-                        //mail($mail,$subject,$message);
+                            //Send confirmation email
+                            $message = "Your Activation Code is ".$code."";
+                            $to= $mail;
+                            $subject="Activation Code For Boomerang Child Care";
+                            $body='
+    
+                            Hi '.$parentLastName.' '.$parentFirstName.',
 
-                
-                        echo'<h2>Registration successfully!</h2>';
-                        echo'<h2>A Confirmation Email has been sent to you</h2>';
-                    }
+                            Thanks for signing up!
+                            Your account has been created, you can login with your credentials after you have activated your account by clicking the url below.
+                         
+                        
+                            http://www.yourwebsite.com/verify.php?email='.$mail.'&code='.$code.'
+
+                            
+                            Please click this link to activate your account:
+                           ';
+                            
+                            $headers = "From: noreply@boomerang.com" . "\r\n";
+                            mail($to,$subject,$body,$headers);
+
+                    
+                            // echo'<h2>Registration successfully!</h2>';
+                            echo'<h2>A Confirmation Email has been sent to you</h2>';
+                        }
+                }
+
 
  
-                }                   
-            }
+            }                   
+        }
+        if($_SERVER($_GET['email']) && $_SERVER($_GET['code'])){
+            $email=$_GET['email'];
+	        $code=$_GET['email'];
+            $select=mysqli_query("select email, first_name, last_name, password from intent where email='$email' and code='$code'");
+            if(mysqli_num_rows($select)==1){
+                while($row=mysqli_fetch_array($select))
+                {
+                    $email=$row['email'];
+                    $firstName = $row['first_name'];
+                    $lastName = $row['last_name'];
+                    $password=$row['password'];
+                    
+                }
+                $insert_user=mysqli_query("insert into parent values('$email', '$parentFirstName', '$parentLastName', '$password')");
+                $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
+                        VALUES ('$email', '$childFirstName', '$childLastName', '$category', '$dayCare');";
+                        mysqli_query($conn,$sql);
+                        mysqli_close($conn);
+                // $delete=mysqli_query("delete from intent where email='$' and code='$code'");
+        }
+    }
         ?>
         <!------------END Database interaction----------->
     </div>

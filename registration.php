@@ -303,7 +303,7 @@ $feePricePreschool = $row['price'];
                         $sql = "INSERT INTO intent (email, first_name, last_name, password, code)
                         VALUES ('$mail', '$parentFirstName', '$parentLastName', '$password', '$code');";
                         mysqli_query($conn,$sql);
-                        $db_id=mysqli_insert_id(conn);
+                    
 
                         $ver = mysqli_query($conn, $query);
                         if(!$ver)
@@ -348,15 +348,16 @@ $feePricePreschool = $row['price'];
                             $xmail->addAddress($mail, $parentFirstName);
                             $xmail->isHTML(true);  
                             $xmail->Subject = 'Activation Link From Boomerang Child Care ';
-                            $xmail->Body = "Hi $parentLastName $parentFirstName,<br><br>
+                            $xmail->Body = 'Hi '.$parentLastName.' '.$parentFirstName.',<br><br>
                             
                             Thanks for signing up!
                             Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
                             <br><br><br>
                             
                             Please click this link to activate your account:
-                            <a href='http://localhost:8888/registration.php'>registration.php?email='.$mail.'&code='.$code.'</a>
-                            ";
+                            
+                            <a href="http://localhost:8888/registration.php?email='.$mail.'&code='.$code.'">Verify Email!</a>
+                            ';
                             $xmail->send();
                             }catch (Exception $e)
                              {
@@ -383,25 +384,45 @@ $feePricePreschool = $row['price'];
         if(isset($_GET['email']) && isset($_GET['code'])){
             
             $email=$_GET['email'];
-	        $code=$_GET['email'];
+	        $code=$_GET['code'];
             echo $email;
-            $select=mysqli_query("select email, first_name, last_name, password from intent where email='$email' and code='$code'");
-            if(mysqli_num_rows($select)==1){
-                while($row=mysqli_fetch_array($select))
-                {
-                    $email=$row['email'];
-                    $firstName = $row['first_name'];
-                    $lastName = $row['last_name'];
-                    $password=$row['password'];
-                    
+            echo $code;
+            //$select="select email, first_name, last_name, password from intent where email='$email' and code='$code';";
+            $sql = "SELECT email, first_name, last_name, password FROM INTENT WHERE email='$email' and code='$code'";
+            $result = mysqli_query($conn, $sql);
+                        if(!$sql)
+                        {
+                            echo mysqli_error($conn);
+                            echo "Wrong";
+                            die();
+                        }
+                        else{
+                            echo "Query succesfully executed!";}
+                $sql = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                if(sizeof($sql) != 0){
+                    foreach ($sql as $details){
+                    $xmail=($detais['email']);
+                    $firstName = ($details['first_name']);
+                    $lastName = ($details['last_name']);
+                    $password=($details['password']);
                 }
-                $insert_user=mysqli_query("insert into parent values('$email', '$parentFirstName', '$parentLastName', '$password')");
+            }
+                
+                echo $xmail;
+                echo $firstName;
+                echo $lastName;
+                echo $password;
+                $sql = "INSERT INTO parent (email, first_name, last_name, password)
+                        VALUES ('$xmail', '$firstName', '$lastName', '$password');";
+                        mysqli_query($conn,$sql);
+                        mysqli_close($conn);
+
                 $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
                         VALUES ('$email', '$childFirstName', '$childLastName', '$category', '$dayCare');";
                         mysqli_query($conn,$sql);
                         mysqli_close($conn);
                 // $delete=mysqli_query("delete from intent where email='$' and code='$code'");
-        }
+        
     }
         ?>
         <!------------END Database interaction----------->

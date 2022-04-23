@@ -298,28 +298,26 @@ $feePricePreschool = $row['price'];
 
                     //if email is unique, run query
                     if(!$duplicatedMail){
-                        
+                        $codes = $code;
                         //statement to insert parent data into database
-                        $sql = "INSERT INTO intent (email, first_name, last_name, password, code)
-                        VALUES ('$mail', '$parentFirstName', '$parentLastName', '$password', '$code');";
-                        mysqli_query($conn,$sql);
-                    
+                    //**********************YOU'D HAVE TO RUN THIS QUERY TO CREATE AN INTENT TABLE*********************************** */
+                        // CREATE TABLE `intent` (
+                        //     `email` varchar(50) NOT NULL,
+                        //     `first_name` varchar(30) NOT NULL,
+                        //     `last_name` varchar(30) NOT NULL,
+                        //     `password` varchar(20) NOT NULL,
+                        //     `code` text NOT NULL,
+                        //     `child_first_name` varchar(30) NOT NULL,
+                        //     `child_last_name` varchar(30) NOT NULL,
+                        //     `category` varchar(15) NOT NULL,
+                        //     `day_care` varchar(20) NOT NULL,
+                        //     PRIMARY KEY(email)
+                        //   );
+                    /********************************************************************************************* */
 
-                        $ver = mysqli_query($conn, $query);
-                        if(!$ver)
-                        {
-                            echo mysqli_error($conn);
-                            die();
-                        }
-                        else{
-                            echo "Query succesfully executed!";
-                        
-                        
-                            //statement to insert child data into database
-                            // $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
-                            // VALUES ('$mail', '$childFirstName', '$childLastName', '$category', '$dayCare');";
-                            // mysqli_query($conn,$sql);
-                            // mysqli_close($conn);
+                        $sql = "INSERT INTO intent (email, first_name, last_name, password, code, child_first_name, child_last_name, category, day_care)
+                        VALUES ('$mail', '$parentFirstName', '$parentLastName', '$password', '$codes', '$childFirstName', '$childLastName', '$category', '$dayCare');";
+                        mysqli_query($conn,$sql);
 
                             //Send confirmation email
                             $xmail = new PHPMailer();
@@ -356,7 +354,7 @@ $feePricePreschool = $row['price'];
                             
                             Please click this link to activate your account:
                             
-                            <a href="http://localhost:8888/registration.php?email='.$mail.'&code='.$code.'">Verify Email!</a>
+                            <a href="http://localhost:8888/registration.php?email='.$mail.'&code='.$codes.'">Verify Email!</a>
                             ';
                             $xmail->send();
                             }catch (Exception $e)
@@ -372,58 +370,50 @@ $feePricePreschool = $row['price'];
 
                     
                             // echo'<h2>Registration successfully!</h2>';
-                            echo'<h2>A Confirmation Email has been sent to you</h2>';
+                            echo'<h3>A Confirmation Email has been sent to you</h3>';
                         }
                 }
 
 
  
             }                   
-        }
+        
         
         if(isset($_GET['email']) && isset($_GET['code'])){
             
             $email=$_GET['email'];
-	        $code=$_GET['code'];
-            echo $email;
-            echo $code;
+	        $codee=$_GET['code'];
             //$select="select email, first_name, last_name, password from intent where email='$email' and code='$code';";
-            $sql = "SELECT email, first_name, last_name, password FROM INTENT WHERE email='$email' and code='$code'";
+            $sql = "SELECT * FROM intent WHERE email= '$email' AND code= '$codee' ;";
             $result = mysqli_query($conn, $sql);
-                        if(!$sql)
-                        {
-                            echo mysqli_error($conn);
-                            echo "Wrong";
-                            die();
-                        }
-                        else{
-                            echo "Query succesfully executed!";}
-                $sql = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                if(sizeof($sql) != 0){
-                    foreach ($sql as $details){
-                    $xmail=($detais['email']);
-                    $firstName = ($details['first_name']);
-                    $lastName = ($details['last_name']);
-                    $password=($details['password']);
-                }
-            }
-                
-                echo $xmail;
-                echo $firstName;
-                echo $lastName;
-                echo $password;
+                            if(mysqli_num_rows($result) == 1) {
+                                $row = mysqli_fetch_array($result);
+                                $xmail = $row['email'];
+                                $firstName = $row['first_name'];
+                                $lastName = $row['last_name'];
+                                $password=$row['password'];
+                                $ChildFirstName = $row['child_first_name'];
+                                $ChildLastName = $row['child_last_name'];
+                                $Category = $row['category'];
+                                $Care = $row['day_care'];
+                            }else{echo "Unable To Retrieve Details At The Moment, Please Try Again";}
                 $sql = "INSERT INTO parent (email, first_name, last_name, password)
                         VALUES ('$xmail', '$firstName', '$lastName', '$password');";
                         mysqli_query($conn,$sql);
-                        mysqli_close($conn);
+                        
 
                 $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
-                        VALUES ('$email', '$childFirstName', '$childLastName', '$category', '$dayCare');";
+                        VALUES ('$email', '$ChildFirstName', '$ChildLastName', '$Category', '$Care');";
                         mysqli_query($conn,$sql);
-                        mysqli_close($conn);
-                // $delete=mysqli_query("delete from intent where email='$' and code='$code'");
-        
-    }
+                
+                $sql = "DELETE FROM intent WHERE email= '$email' AND code= '$codee' ;";
+                mysqli_query($conn, $sql);
+                mysqli_close($conn);
+                echo "<h3 style='color:green; text-align:center;'>You have been verified successfully, you can now proceed to login.</h3>";
+                echo " <a href='login.php'><h3 style='color:black; text-align:center;'>Click to Login</h3></a>";
+
+    }//else{echo "<h3 style='color:red; text-align:center;'>Unable to complete registration, please try again.</h3>";}
+     
         ?>
         <!------------END Database interaction----------->
     </div>
@@ -436,3 +426,7 @@ $feePricePreschool = $row['price'];
 <?php
 include_once('footer.php');
 ?>   
+
+
+
+

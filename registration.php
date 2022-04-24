@@ -393,9 +393,9 @@ $feePricePreschool = $row['price'];
                                 $Care = $row['day_care'];
                             }
                             
-                            if(!empty($xmail) || !empty($firstName) || !empty($lastName) ||
-                             !empty($Care)|| !empty($password) || !empty($ChildFirstName) ||
-                             !empty($ChildLastName || !empty($Category))){
+                            if(!empty($xmail) && !empty($firstName) && !empty($lastName) &&
+                             !empty($Care)&& !empty($password) && !empty($ChildFirstName) &&
+                             !empty($ChildLastName && !empty($Category))){
                                 $sql = "INSERT INTO parent (email, first_name, last_name, password)
                                 VALUES ('$xmail', '$firstName', '$lastName', '$password');";
                                 mysqli_query($conn,$sql);

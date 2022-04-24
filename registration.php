@@ -22,6 +22,7 @@ include_once('subHeader.php');
 <?php
 
 
+
 //variables to help output error messages
 $parentFirstNameSet = false;
 $parentLastnameSet = false;

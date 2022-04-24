@@ -318,22 +318,16 @@ $feePricePreschool = $row['price'];
                         $sql = "INSERT INTO intent (email, first_name, last_name, password, code, child_first_name, child_last_name, category, day_care)
                         VALUES ('$mail', '$parentFirstName', '$parentLastName', '$password', '$codes', '$childFirstName', '$childLastName', '$category', '$dayCare');";
                         mysqli_query($conn,$sql);
-
-                            //Send confirmation email
+                        //Send confirmation link email
                             $xmail = new PHPMailer();
                             try{
-                            //Tell PHPMailer to use SMTP
                             $xmail->isSMTP();
                             $xmail->SMTPDebug = SMTP::DEBUG_OFF;
-
-                            //Set the hostname of the mail server
                             $xmail->Host = 'smtp.gmail.com';
                             $xmail->Port = 465;
                             $xmail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-
-                            //Whether to use SMTP authentication
                             $xmail->SMTPAuth = true;
-                            //Username to use for SMTP authentication - use full email address for gmail
+                            
                             //Make sure to use your gmail address here
                             $xmail->Username = 'abdulrazaqahmed60@gmail.com';
                             
@@ -384,8 +378,8 @@ $feePricePreschool = $row['price'];
             $email=$_GET['email'];
 	        $codee=$_GET['code'];
             //$select="select email, first_name, last_name, password from intent where email='$email' and code='$code';";
-            $sql = "SELECT * FROM intent WHERE email= '$email' AND code= '$codee' ;";
-            $result = mysqli_query($conn, $sql);
+                        $sql = "SELECT * FROM intent WHERE email= '$email' AND code= '$codee' ;";
+                        $result = mysqli_query($conn, $sql);
                             if(mysqli_num_rows($result) == 1) {
                                 $row = mysqli_fetch_array($result);
                                 $xmail = $row['email'];
@@ -396,23 +390,35 @@ $feePricePreschool = $row['price'];
                                 $ChildLastName = $row['child_last_name'];
                                 $Category = $row['category'];
                                 $Care = $row['day_care'];
-                            }else{echo "Unable To Retrieve Details At The Moment, Please Try Again";}
-                $sql = "INSERT INTO parent (email, first_name, last_name, password)
-                        VALUES ('$xmail', '$firstName', '$lastName', '$password');";
-                        mysqli_query($conn,$sql);
+                            }
+                            
+                            if(!empty($xmail) || !empty($firstName) || !empty($lastName) ||
+                             !empty($Care)|| !empty($password) || !empty($ChildFirstName) ||
+                             !empty($ChildLastName || !empty($Category))){
+                                $sql = "INSERT INTO parent (email, first_name, last_name, password)
+                                VALUES ('$xmail', '$firstName', '$lastName', '$password');";
+                                mysqli_query($conn,$sql);
+                                
+
+                                $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
+                                VALUES ('$email', '$ChildFirstName', '$ChildLastName', '$Category', '$Care');";
+                                mysqli_query($conn,$sql);
                         
-
-                $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
-                        VALUES ('$email', '$ChildFirstName', '$ChildLastName', '$Category', '$Care');";
-                        mysqli_query($conn,$sql);
-                
-                $sql = "DELETE FROM intent WHERE email= '$email' AND code= '$codee' ;";
-                mysqli_query($conn, $sql);
-                mysqli_close($conn);
-                echo "<h3 style='color:green; text-align:center;'>You have been verified successfully, you can now proceed to login.</h3>";
-                echo " <a href='login.php'><h3 style='color:black; text-align:center;'>Click to Login</h3></a>";
-
-    }//else{echo "<h3 style='color:red; text-align:center;'>Unable to complete registration, please try again.</h3>";}
+                                $sql = "DELETE FROM intent;";
+                                mysqli_query($conn, $sql);
+                                 mysqli_close($conn);
+                                echo "<h3 style='color:green; text-align:center;'>You have been verified successfully, you can now proceed to login.</h3>";
+                                echo " <a href='login.php'><h3 style='color:black; text-align:center;'>Click to Login</h3></a>";
+                              }else{
+                                  
+                                $sql = "DELETE FROM intent;";
+                                mysqli_query($conn, $sql);
+                                mysqli_close($conn);
+                              echo"<h3 style='color:red; text-align:center;'>Unable to complete registration, please try again.</h3>";
+                              
+                            }
+    
+                        }
      
         ?>
         <!------------END Database interaction----------->

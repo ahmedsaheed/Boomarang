@@ -17,7 +17,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="cta-text">
                                 <h4>Find us</h4>
-                                <span>1010 Avenue, sw 54321, chandigarh</span>
+                                <span>S Circular Rd, Dublin 8, Dublin Ireland</span>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                             <i class="fas fa-phone"></i>
                             <div class="cta-text">
                                 <h4>Call us</h4>
-                                <span>9876543210 0</span>
+                                <span>+353 83 365 4444</span>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                             <i class="far fa-envelope-open"></i>
                             <div class="cta-text">
                                 <h4>Mail us</h4>
-                                <span>mail@info.com</span>
+                                <span>boomerang@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -66,15 +66,14 @@
                                 <h3>Useful Links</h3>
                             </div>
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><a href="index.php">Home</a></li>
                                 <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
+                                <li><a href="services.php">services</a></li>
                                 <li><a href="#">portfolio</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="contactUs.php">Contact</a></li>
                                 <li><a href="#">About us</a></li>
-                                <li><a href="#">Our Services</a></li>
+                                <li><a href="services.php">Our Services</a></li>
                                 <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Contact us</a></li>
                                 <li><a href="#">Latest News</a></li>
                             </ul>
                         </div>

@@ -47,5 +47,5 @@ include_once('subHeader.php');
 
 
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?>   

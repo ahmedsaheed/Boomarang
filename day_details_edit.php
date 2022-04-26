@@ -135,5 +135,5 @@ $date = date("Y-m-d");
 
 
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?>   

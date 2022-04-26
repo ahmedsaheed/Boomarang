@@ -148,5 +148,5 @@ include_once '../../../include/connection.php'; ?>
 
 <!-------------------------- Footer  ---------------->
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?>   

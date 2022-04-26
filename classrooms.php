@@ -62,5 +62,5 @@ if (!isset($_SESSION['user_email'])) {
 </body>
 </html>
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?> 

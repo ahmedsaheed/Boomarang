@@ -22,8 +22,10 @@ nav img{
     width: 120px;
 } 
 .nav-links{
+    margin-top: -60px;
     flex: 1;
     text-align: right;
+    
 }   
 .nav-links ul li{
     list-style: none;
@@ -124,6 +126,9 @@ nav .fas{
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
+        margin-top: -60px;
+        position: absolute;
+        right: 0;
     }
     .nav-links ul{
         padding: 30px;

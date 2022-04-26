@@ -85,24 +85,24 @@ $feePricePreschool = $row['price'];
 <section class="childInfo">
     <div class="row">
         <div class="about-col">
-        <h1>Childcare Information</h1>
-        <h2>Babies</h2>
-        <h3>Day Fee: <?php echo $feePriceBaby?>$</h3>
+        <h1 style="color: white;">Childcare Information</h1>
+        <h2 style="color: white;">Babies</h2>
+        <h3 style="color: white;">Day Fee: <?php echo $feePriceBaby?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <h2>Wobblers</h2>
-        <h3>Day Fee: <?php echo $feePriceWobbler?>$</h3>
+        <h2 style="color: white;">Wobblers</h2>
+        <h3 style="color: white;">Day Fee: <?php echo $feePriceWobbler?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <h2>Toddlers </h2>
-        <h3>Day Fee: <?php echo $feePriceToddlers?>$</h3>
+        <h2 style="color: white;">Toddlers </h2>
+        <h3 style="color: white;">Day Fee: <?php echo $feePriceToddlers?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
-        <h2>Preschool</h2>
-        <h3>Day Fee: <?php echo $feePricePreschool?>$</h3>
+        <h2 style="color: white;">Preschool</h2>
+        <h3 style="color: white;">Day Fee: <?php echo $feePricePreschool?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

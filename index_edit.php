@@ -43,13 +43,13 @@ $picture = '';
     <div class="row">
         <div class="blog-left">  
             <div class="comment-box">
-                <h3>Hello <?php echo $_SESSION['name'];?>, update the fields below regarding feature boxes.</h3>
+                <h3 style="color: white;">Hello <?php echo $_SESSION['name'];?>, update the fields below regarding feature boxes.</h3>
                 
                 <form class="comment-form" action="index_edit.php" method="post">
                     
 
                 <!------------feature box number----------->
-                    <label for="id">Feature box number:</label>
+                    <label for="id" style="color: white;">Feature box number:</label>
                     <select name="id" id="id" >
                         <option value="">None</option>
                         <option value="1"<?php if(isset($_POST['id'])&& $_POST['id']=="1") echo 'selected="selected"',$idSet = true;?>>1</option>

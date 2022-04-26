@@ -63,8 +63,8 @@ include_once '../../../include/connection.php'; ?>
     <!--------------------------  Location  ---------------->
 
     <section class="location">
-        <h1>Where we are located</h1>
-        <p>Come visit us, you won't regret.</p>
+        <h1 style="color: white;">Where we are located</h1>
+        <p style="color: white;">Come visit us, you won't regret.</p>
 
         <div class="row">
             <div class="location-col">

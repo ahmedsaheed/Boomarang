@@ -97,6 +97,7 @@ $password = '';
                     $_SESSION['name'] = $row['first_name'].' '.$row['last_name'];
                     echo('you are logged in as '.$_SESSION['name']);
                     $emailLogged = $_SESSION['user_email'];
+                    echo "<script>parent.self.location='services.php';</script>"; 
                     
                     //gets child data if not admin
                     if(!($emailLogged == 'admin@boomerang.com')){
@@ -133,3 +134,10 @@ $password = '';
 <?php
 include_once('footer2.php');
 ?> 
+
+
+
+
+
+
+echo "<script>parent.self.location='services.php';</script>";   

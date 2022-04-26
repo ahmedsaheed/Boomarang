@@ -1,5 +1,5 @@
 <?php 
-$pageTitle="Classrooms";
+$pageTitle="Classroom";
 function customPageHeader(){?>
 <!--arbitrary HTML tags -->
 
@@ -7,7 +7,7 @@ function customPageHeader(){?>
 include_once('subHeader.php');
 if (!isset($_SESSION['user_email'])) { 
     // if user not logged in,
-    header("location: logins.php");
+    header("location: login.php");
     exit;
     }
 ?>

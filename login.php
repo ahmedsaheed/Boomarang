@@ -95,7 +95,9 @@ $password = '';
                     $_SESSION['user_email'] = $row['email'];
                     $_SESSION['fName'] = $row['first_name'];
                     $_SESSION['name'] = $row['first_name'].' '.$row['last_name'];
-                    echo('you are logged in as '.$_SESSION['name']);
+                    echo '<center><p style="color:white;"><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                     Logged In successfully as ' .$_SESSION['name']. '</p><center>';
                     $emailLogged = $_SESSION['user_email'];
                     
                     //gets child data if not admin
@@ -108,7 +110,7 @@ $password = '';
                             // set session variables...
                             $_SESSION['childID'] = $row['child_ID'];
                             $_SESSION['childName'] = $row['first_name'].' '.$row['last_name'];
-                            echo '. Your child name is '.$_SESSION['childName'];
+                            echo '<p style="color:white;"> Your child name is '.$_SESSION['childName']. '</p>';
                             echo "<script>parent.self.location='index.php';</script>";   
                         }
                         

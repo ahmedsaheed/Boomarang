@@ -7,7 +7,7 @@ function customPageHeader(){?>
 include_once('subHeader.php');
 if (!isset($_SESSION['user_email'])) { 
     // if user not logged in,
-    header("location: login.php");
+    header("location: logins.php");
     exit;
     }
 ?>
@@ -29,7 +29,11 @@ if (!isset($_SESSION['user_email'])) {
 <body>    
 <section class="classroom">
         <br><center><h1 style="color: black;">Garden Information</h1></center>
+<<<<<<< HEAD
         <center><p style="color: black; padding: 25px 50px 5px 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus ex quis ligula condimentum, nec viverra quam bibendum. Nullam eleifend vel quam non dapibus. Ut vehicula est sem, non mattis velit rhoncus scelerisque. Ut non est tristique lorem porttitor sollicitudin. Quisque facilisis mauris sed lectus elementum, molestie ullamcorper felis sollicitudin. Ut sit amet est vitae mauris mollis viverra. <br><br>Vivamus a congue nulla, non aliquet ante.
+=======
+        <center><p style="color: black; padding: 25px 50px 5px 50px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus ex quis ligula condimentum, nec viverra quam bibendum. Nullam eleifend vel quam non dapibus. Ut vehicula est sem, non mattis velit rhoncus scelerisque. Ut non est tristique lorem porttitor sollicitudin. Quisque facilisis mauris sed lectus elementum, molestie ullamcorper felis sollicitudin. Ut sit amet est vitae mauris mollis viverra. <br><br>Vivamus a congue nulla, non aliquet ante.
+>>>>>>> mail-work
                 Nulla non luctus dolor, quis laoreet erat. Sed imperdiet auctor feugiat. Phasellus ornare quis nisi ac feugiat. Curabitur vestibulum efficitur mauris, eget tempus risus porttitor id. In feugiat gravida sem, at molestie libero efficitur at. Fusce at ligula in sem semper mattis eu quis est. Vivamus imperdiet tortor eu ex posuere euismod.</p></center>
         
 </section>
@@ -62,5 +66,5 @@ if (!isset($_SESSION['user_email'])) {
 </body>
 </html>
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?> 

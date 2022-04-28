@@ -55,5 +55,5 @@ if (!($_SESSION['user_email'] == 'admin@boomerang.com')) {
 
 
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?>   

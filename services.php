@@ -11,7 +11,7 @@ include_once('subHeader.php');
 
 <!-------------------------- Course  ---------------->
 <section class="course">
-    <h1>Services We Offer</h1>
+    <h1 style="color: white;">Services We Offer</h1>
     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
 
     <div class="row">
@@ -39,7 +39,7 @@ include_once('subHeader.php');
 <!-------------------------- facilities  ---------------->
 
 <section class="facilities">
-    <h1>Our Facilities</h1>
+    <h1 style="color: white;">Our Facilities</h1>
     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
 
     <div class="row">
@@ -66,5 +66,5 @@ include_once('subHeader.php');
 
 
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?>   

@@ -31,15 +31,14 @@ $password = '';
 
 ?>
 
+
 <!------------Form Box----------->
 <section class="main">
-    <div class="box-form">
-        <h1>Login</h1>
-        <p>Some pages need a logged user or admin to be accessed.</p>
-        <form action="logins.php" method="post">
-            
-            <!------------email----------->
-            <label for="mail">Email:</label>
+<div class="login-box">
+  <h2>Login</h2>
+  <form action="login.php" method="post">
+    <div class="user-box">
+      <label for="mail">Email:</label><br>
             <input type="email" id="mail" name="mail" 
             value="<?php
             
@@ -47,16 +46,16 @@ $password = '';
                 $mail = Pass_input($_POST['mail']);
                 echo $mail;
                 $mailSet = true;
-            }?>"><br>
-            <div class='invalid'>
+            }?>">
+            
                 <?php 
                 if (!empty($_POST)){
                     if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
                 }?>
-            </div>
-
-            <!------------password----------->
-            <label for="password">Password:</label>
+            
+    </div>
+    <div class="user-box">
+      <label for="password">Password:</label><br>
             <input type="password" id="password" name="password" 
             value="<?php
             //Between 8-12 alphanumeric, include at least 1 number and exactly 1 special character
@@ -64,18 +63,19 @@ $password = '';
                 $password = Pass_input($_POST['password']);
                 echo $password;
                 $passwordSet = true;
-            }?>"><br>
-            <div class='invalid'>
+            }?>">
                 <?php 
                 if (!empty($_POST)){
                     if(!$passwordSet)echo'<p style="color: red;">Invalid password Input!</p>';
                 }?>
-            </div>
-                                 
-            <button type="submit" class="hero-btn ">Login</button>
-            <p> Don't have an account yet! </p>
-            <a href="registration.php"><p style="color:black;">Click here to register</p></a>
-        </form>
+            
+    </div>    
+
+      <span></span><button type="submit" class="hero-btn">Login</button>
+   <center><a href="registration.php"><span></span><span></span><span></span><span></span><p style="color:white;">No account yet?<br> Click here to register </p></a></center>
+  </form>
+</div>
+
         
         <!------------Database interaction----------->
         <?php
@@ -95,7 +95,9 @@ $password = '';
                     $_SESSION['user_email'] = $row['email'];
                     $_SESSION['fName'] = $row['first_name'];
                     $_SESSION['name'] = $row['first_name'].' '.$row['last_name'];
-                    echo('you are logged in as '.$_SESSION['name']);
+                    echo '<center><p style="color:white;"><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                     Logged In successfully as ' .$_SESSION['name']. '</p><center>';
                     $emailLogged = $_SESSION['user_email'];
                     
                     //gets child data if not admin
@@ -108,7 +110,7 @@ $password = '';
                             // set session variables...
                             $_SESSION['childID'] = $row['child_ID'];
                             $_SESSION['childName'] = $row['first_name'].' '.$row['last_name'];
-                            echo '. Your child name is '.$_SESSION['childName'];
+                            echo '<p style="color:white;"> Your child name is '.$_SESSION['childName']. '</p>';
                             echo "<script>parent.self.location='services.php';</script>";   
                         }
                         
@@ -126,10 +128,11 @@ $password = '';
         <!------------END Database interaction----------->
     </div>
 </section>
+<br><br><br><br><br><br><br><br><br><br>
 
 
 
 
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?> 

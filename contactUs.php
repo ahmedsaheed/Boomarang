@@ -43,21 +43,21 @@ $message = '';
             <div>
                 <i class="fas fa-home"></i>
                 <span>
-                    <h5>S Circular Rd, Dublin 8</h5>
+                    <h5 style="color: white;">S Circular Rd, Dublin 8</h5>
                     <p>Dublin, Ireland</p>
                 </span>
             </div>
             <div>
                 <i class="fas fa-phone-alt"></i>
                 <span>
-                    <h5>+353 83 365 4444</h5>
+                    <h5 style="color: white;">+353 83 365 4444</h5>
                     <p>Monday to Saturday, 7AM to 6PM</p>
                 </span>
             </div>
             <div>
                 <i class="fas fa-envelope-square"></i>
                 <span>
-                    <h5>boomerang@gmail.com</h5>
+                    <h5 style="color: white;">boomerang@gmail.com</h5>
                     <p>Email us your query</p>
                 </span>
             </div>
@@ -169,5 +169,5 @@ $message = '';
 </section>
 
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?>   

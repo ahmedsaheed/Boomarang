@@ -1,3 +1,12 @@
+<?php
+/* Namespace alias. */
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+/* Include the Composer generated autoload.php file. */
+require 'vendor/autoload.php';
+?>
+
 <?php 
 $pageTitle="Registration";
 function customPageHeader(){?>
@@ -11,6 +20,7 @@ include_once('subHeader.php');
 
 <!------------php basics----------->
 <?php
+
 
 
 //variables to help output error messages
@@ -43,6 +53,7 @@ $childLastName = '';
 $mail = '';
 $password = '';
 $userName = '';
+$code=substr(md5(mt_rand()),0,15);
 
 
 //fetch fee information
@@ -74,24 +85,24 @@ $feePricePreschool = $row['price'];
 <section class="childInfo">
     <div class="row">
         <div class="about-col">
-        <h1>Childcare Information</h1>
-        <h2>Babies</h2>
-        <h3>Day Fee: <?php echo $feePriceBaby?>$</h3>
+        <h1 style="color: white;">Childcare Information</h1>
+        <h2 style="color: white;">Babies</h2>
+        <h3 style="color: white;">Day Fee: <?php echo $feePriceBaby?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <h2>Wobblers</h2>
-        <h3>Day Fee: <?php echo $feePriceWobbler?>$</h3>
+        <h2 style="color: white;">Wobblers</h2>
+        <h3 style="color: white;">Day Fee: <?php echo $feePriceWobbler?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <h2>Toddlers </h2>
-        <h3>Day Fee: <?php echo $feePriceToddlers?>$</h3>
+        <h2 style="color: white;">Toddlers </h2>
+        <h3 style="color: white;">Day Fee: <?php echo $feePriceToddlers?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
-        <h2>Preschool</h2>
-        <h3>Day Fee: <?php echo $feePricePreschool?>$</h3>
+        <h2 style="color: white;">Preschool</h2>
+        <h3 style="color: white;">Day Fee: <?php echo $feePricePreschool?>$</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -121,7 +132,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$parentFirstNameSet)echo'<p>Invalid name Input!</p>';
+                    if(!$parentFirstNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
 
@@ -138,7 +149,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$parentLastName)echo'<p>Invalid name Input!</p>';
+                    if(!$parentLastName)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
             
@@ -156,7 +167,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$mailSet)echo'<p>Invalid email Input!</p>';
+                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
                 }?>
             </div>
 
@@ -174,7 +185,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$passwordSet)echo'<p>Invalid password Input! Try something stronger 8-12 in length.</p>';
+                    if(!$passwordSet)echo'<p style="color: red;">Invalid password Input! Try something stronger 8-12 in length.</p>';
                 }?>
             </div>
 
@@ -192,7 +203,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$childFirstNameSet)echo'<p>Invalid name Input!</p>';
+                    if(!$childFirstNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
 
@@ -210,7 +221,7 @@ $feePricePreschool = $row['price'];
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$childLastNameSet)echo'<p>Invalid name Input!</p>';
+                    if(!$childLastNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
 
@@ -231,7 +242,7 @@ $feePricePreschool = $row['price'];
                 }
                 else{
                     if (!empty($_POST)){
-                        echo '<p>Invalid category selected!<p>';}
+                        echo '<p style="color: red;">Invalid category selected!<p>';}
                     }
                 ?>
             </div>
@@ -253,13 +264,13 @@ $feePricePreschool = $row['price'];
                 }
                 else{
                     if (!empty($_POST)){
-                        echo '<p>Invalid day care selected!<p>';}
+                        echo '<p style="color: red;">Invalid day care selected!<p>';}
                     }
                 ?>
             </div>  
             
             
-            <button type="submit" class="hero-btn ">Register</button>
+            <button type="submit" class="hero-btn ">Register</button><p></p>
         </form>
         
 
@@ -279,8 +290,8 @@ $feePricePreschool = $row['price'];
                         while($row = mysqli_fetch_array($result)){
                             $emailInTable = $row['email'];
                             if($emailInTable == $mail){
-                                echo "<div class='invalid'><h2>Registration failed!</h2></div>";
-                                echo "<div class='invalid'>Email already registered</div>";
+                                echo '<div class="invalid"><h2 style="color: red;">Registration failed!</h2></div>';
+                                echo '<div class="invalid" style="color: red;">Email already registered</div>';
                                 $duplicatedMail = true;
                             } 
                         }
@@ -288,40 +299,141 @@ $feePricePreschool = $row['price'];
 
                     //if email is unique, run query
                     if(!$duplicatedMail){
-                        
+                        $codes = $code;
                         //statement to insert parent data into database
-                        $sql = "INSERT INTO parent (email, first_name, last_name, password)
-                        VALUES ('$mail', '$parentFirstName', '$parentLastName', '$password');";
-                        mysqli_query($conn,$sql);
-                        
-                        //statement to insert child data into database
-                        $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
-                        VALUES ('$mail', '$childFirstName', '$childLastName', '$category', '$dayCare');";
-                        mysqli_query($conn,$sql);
-                        mysqli_close($conn);
+                    //**********************YOU'D HAVE TO RUN THIS QUERY TO CREATE AN INTENT TABLE*********************************** */
+                        // CREATE TABLE `intent` (
+                        //     `email` varchar(50) NOT NULL,
+                        //     `first_name` varchar(30) NOT NULL,
+                        //     `last_name` varchar(30) NOT NULL,
+                        //     `password` varchar(20) NOT NULL,
+                        //     `code` text NOT NULL,
+                        //     `child_first_name` varchar(30) NOT NULL,
+                        //     `child_last_name` varchar(30) NOT NULL,
+                        //     `category` varchar(15) NOT NULL,
+                        //     `day_care` varchar(20) NOT NULL,
+                        //     PRIMARY KEY(email)
+                        //   );
+                    /********************************************************************************************* */
 
-                        //Send confirmation email
-                        $subject = "Boomerang Childcare";
-                        $message = "Thanks for registering at Boomerang Childcare, we will be in touch soon.";
-                        //mail($mail,$subject,$message);
+                        $sql = "INSERT INTO intent (email, first_name, last_name, password, code, child_first_name, child_last_name, category, day_care)
+                        VALUES ('$mail', '$parentFirstName', '$parentLastName', '$password', '$codes', '$childFirstName', '$childLastName', '$category', '$dayCare');";
+                        mysqli_query($conn,$sql);
+                        //Send confirmation link email
+                            $xmail = new PHPMailer();
+                            try{
+                            $xmail->isSMTP();
+                            $xmail->SMTPDebug = SMTP::DEBUG_OFF;
+                            $xmail->Host = 'smtp.gmail.com';
+                            $xmail->Port = 465;
+                            $xmail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                            $xmail->SMTPAuth = true;
+                            
+                            //Make sure to use your gmail address here
+                            $xmail->Username = 'abdulrazaqahmed60@gmail.com';
+                            
+                            //Password to use for SMTP authentication
+                            /*App needs a specific password from your email to work follow this link and it's instructions
+                             https://support.google.com/mail/answer/185833?hl=en */
+                                
+                            $xmail->Password = 'wkvovnnvfshhlgeu';
+                            $xmail->setFrom('noreply@boomerang.com', 'Boomerang');
+                            $xmail->addAddress($mail, $parentFirstName);
+                            $xmail->isHTML(true);  
+                            $xmail->Subject = 'Activation Link From Boomerang Child Care ';
+                            $xmail->Body = 'Hi '.$parentLastName.' '.$parentFirstName.',<br><br>
+                            
+                            Thanks for signing up!
+                            Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+                            <br><br><br>
+                            
+                            Please click this link to activate your account:
+                            
+                            <a href="http://localhost:8888/registration.php?email='.$mail.'&code='.$codes.'">Verify Email!</a>
+                            ';
+                            $xmail->send();
+                            }catch (Exception $e)
+                             {
+                                /* PHPMailer exception. */
+                                echo $e->errorMessage();
+                             }
+                             catch (\Exception $e)
+                             {
+                                /* PHP exception (note the backslash to select the global namespace Exception class). */
+                                echo $e->getMessage();
+                             }
 
-                
-                        echo'<h2>Registration successfully!</h2>';
-                        echo'<h2>A Confirmation Email has been sent to you</h2>';
-                    }
+                    
+                            // echo'<h2>Registration successfully!</h2>';
+                            echo'<h3>A Confirmation Email has been sent to you</h3>';
+                        }
+                }
+
 
  
-                }                   
-            }
+            }                   
+        
+        
+        if(isset($_GET['email']) && isset($_GET['code'])){
+            
+            $email=$_GET['email'];
+	        $codee=$_GET['code'];
+            //$select="select email, first_name, last_name, password from intent where email='$email' and code='$code';";
+                        $sql = "SELECT * FROM intent WHERE email= '$email' AND code= '$codee' ;";
+                        $result = mysqli_query($conn, $sql);
+                            if(mysqli_num_rows($result) == 1) {
+                                $row = mysqli_fetch_array($result);
+                                $xmail = $row['email'];
+                                $firstName = $row['first_name'];
+                                $lastName = $row['last_name'];
+                                $password=$row['password'];
+                                $ChildFirstName = $row['child_first_name'];
+                                $ChildLastName = $row['child_last_name'];
+                                $Category = $row['category'];
+                                $Care = $row['day_care'];
+                            }
+                            
+                            if(!empty($xmail) && !empty($firstName) && !empty($lastName) &&
+                             !empty($Care)&& !empty($password) && !empty($ChildFirstName) &&
+                             !empty($ChildLastName && !empty($Category))){
+                                $sql = "INSERT INTO parent (email, first_name, last_name, password)
+                                VALUES ('$xmail', '$firstName', '$lastName', '$password');";
+                                mysqli_query($conn,$sql);
+                                
+
+                                $sql = "INSERT INTO child (parent_email, first_name, last_name, category, day_care)
+                                VALUES ('$email', '$ChildFirstName', '$ChildLastName', '$Category', '$Care');";
+                                mysqli_query($conn,$sql);
+                        
+                                $sql = "DELETE FROM intent;";
+                                mysqli_query($conn, $sql);
+                                 mysqli_close($conn);
+                                echo "<h3 style='color:green; text-align:center;'>You have been verified successfully, you can now proceed to login.</h3>";
+                                echo " <a href='login.php'><h3 style='color:black; text-align:center;'>Click to Login</h3></a>";
+                              }else{
+                                  
+                                $sql = "DELETE FROM intent;";
+                                mysqli_query($conn, $sql);
+                                mysqli_close($conn);
+                              echo"<h3 style='color:red; text-align:center;'>Unable to complete registration, please try again.</h3>";
+                              
+                            }
+    
+                        }
+     
         ?>
         <!------------END Database interaction----------->
     </div>
-</section>
+</section><br>
 
 
 
 
 
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?>   
+
+
+
+

@@ -11,7 +11,7 @@ include_once('subHeader.php');
 
 <!-------------------------- testimonials  ---------------->
 <section class="testimonials">
-    <h1>What People Are Saying About Us</h1>
+    <h1 style="color: white;">What People Are Saying About Us</h1>
     <p>For us, your opinion counts.</p>
     <div class="row">
         <div class="testimonials-col">
@@ -47,5 +47,5 @@ include_once('subHeader.php');
 
 
 <?php
-include_once('footer.php');
+include_once('footer2.php');
 ?>   

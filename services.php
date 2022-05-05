@@ -45,17 +45,17 @@ include_once('subHeader.php');
     <div class="row">
         <div class="facilities-col">
             <a href="classrooms.php"><img src="images/facility1.jpg"></a>
-            <a href="classrooms.php"><h3 style="color:black; text-align:center;">Classrooms</h3></a>
+            <a href="classrooms.php"><h3 style="color:white; text-align:center;">Classrooms</h3></a>
             <p>In ornare quam viverra orci sagittis eu volutpat.</p>
         </div>
         <div class="facilities-col">
             <a href="garden.php"><img src="images/facility2.jpg"></a>
-            <a href="garden.php"><h3 style="color:black; text-align:center;">Garden</h3></a>
+            <a href="garden.php"><h3 style="color:white; text-align:center;">Garden</h3></a>
             <p>In ornare quam viverra orci sagittis eu volutpat.</p>
         </div>
         <div class="facilities-col">
             <a href="kitchen.php"><img src="images/facility3.jpg"></a>
-            <a href="kitchen.php"><h3 style="color:black; text-align:center;">Kitchen</h3></a>
+            <a href="kitchen.php"><h3 style="color:white; text-align:center;">Kitchen</h3></a>
             <p>In ornare quam viverra orci sagittis eu volutpat.</p>
         </div>
     </div>

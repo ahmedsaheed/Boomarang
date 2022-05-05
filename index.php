@@ -1,7 +1,8 @@
 <?php 
 session_start(); 
 //Include connection file
-include_once 'include/connection.php'; ?>
+//include_once '../../include/connection.php';
+include_once 'connection.php'; ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,6 @@ include_once 'include/connection.php'; ?>
                     <i class="fas fa-times" onclick="hideMenu()"></i>
                     <ul>
                         <li><a href="index.php">HOME</a></li>
-                        <li><a href="registration.php">REGISTRATION</a></li>
                         <li><a href="services.php">SERVICES & FACILITIES</a></li>
                         <li><a href="testimonial.php">TESTIMONIALS</a></li>
                         <li><a href="contactUs.php">CONTACT US</a></li>
@@ -45,6 +45,7 @@ include_once 'include/connection.php'; ?>
                         //display login page only if not logged in
                         else {
                             echo '<li><a href="login.php">LOGIN</a></li>'; 
+                            echo '<li><a href="registration.php">REGISTRATION</a></li>';
                         }?>
                     </ul>
                 </div>

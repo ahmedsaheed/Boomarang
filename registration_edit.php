@@ -44,12 +44,12 @@ $feePrice = '';
     <div class="row">
         <div class="blog-left">  
             <div class="comment-box">
-                <h3>Hello <?php echo $_SESSION['name'];?>, update the fields below regarding the fee prices.</h3>
+                <h3 style="color: white;">Hello <?php echo $_SESSION['name'];?>, update the fields below regarding the fee prices.</h3>
                 
                 <form class="comment-form" action="registration_edit.php" method="post">
                     
                 <!------------Fuel Type----------->
-                <label for="category">Category:</label>
+                <label for="category" style="color: white;">Category:</label>
                 <select name="category" id="category">
                     <option value="">None</option>
                     <option value="babies"<?php if(isset($_POST['category'])&& $_POST['category']=="babies") echo 'selected="selected"',$categorySet = true;?>>babies</option>
@@ -81,7 +81,7 @@ $feePrice = '';
                 <div class='invalid'>
                     <?php 
                     if (!empty($_POST)){
-                        if(!$feePriceSet)echo'<p>Invalid Fee Price Input!</p>';
+                        if(!$feePriceSet)echo'<pstyle="color: red;">Invalid Fee Price Input!</p>';
                     }?>
                 </div>
 
@@ -100,7 +100,7 @@ $feePrice = '';
                             price = '$feePrice'
                             WHERE name = '$category';";
                             mysqli_query($conn,$sql);
-                            echo '<h2>Fee updated successfully!</h2>';
+                            echo '<h2 style="color: white;">Fee updated successfully!</h2>';
                         }
                     }?>
                     <!------------END Database interaction----------->

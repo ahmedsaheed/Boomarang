@@ -74,11 +74,8 @@ $password = '';
       <span></span><button type="submit" class="hero-btn">Login</button>
    <center><a href="registration.php"><span></span><span></span><span></span><span></span><p style="color:white;">No account yet?<br> Click here to register </p></a></center>
   </form>
-</div>
-
-        
-        <!------------Database interaction----------->
-        <?php
+  <!------------Database interaction----------->
+  <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             //check if ALL user data is ready to go to database                
@@ -119,13 +116,18 @@ $password = '';
                       
                 } 
                 else {
-                echo '<h2 style="color: red;">Error!</h2> <h3 style="color: red;">The username and password are incorrect!</h3>';
+                echo '<p style="color: red;">Error The username and password are incorrect!</p>';
                 }
-
+               // <!------------END Database interaction----------->
             }
         }
         ?>
-        <!------------END Database interaction----------->
+</div>
+
+        
+        
+    
+        
     </div>
 </section>
 <br><br><br><br><br><br><br><br><br><br>

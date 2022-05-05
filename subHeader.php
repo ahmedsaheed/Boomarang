@@ -29,7 +29,6 @@ session_start();
             <i class="fas fa-times" onclick="hideMenu()"></i>
             <ul>
                 <li><a href="index.php">HOME</a></li>
-                <li><a href="registration.php">REGISTRATION</a></li>
                 <li><a href="services.php">SERVICES & FACILITIES</a></li>
                 <li><a href="testimonial.php">TESTIMONIALS</a></li>
                 <li><a href="contactUs.php">CONTACT US</a></li>
@@ -50,6 +49,7 @@ session_start();
                 //display login page only if not logged in
                 else {
                     echo '<li><a href="login.php">LOGIN</a></li>'; 
+                    echo '<li><a href="registration.php">REGISTRATION</a></li>';
                 }?>
                 
             </ul>

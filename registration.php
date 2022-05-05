@@ -115,6 +115,80 @@ $feePricePreschool = $row['price'];
 
 <!------------Form Box----------->
 <section class="main">
+<!-- <div class="login-box">
+  <h2>Login</h2>
+  <form action="login.php" method="post">
+    <div class="user-box">
+      <label for="mail">First Name:</label><br>
+            <input type="email" id="mail" name="mail" 
+            value="<?php
+            
+            if (isset($_POST['mail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['mail']))){
+                $mail = Pass_input($_POST['mail']);
+                echo $mail;
+                $mailSet = true;
+            }?>">
+            
+                <?php 
+                if (!empty($_POST)){
+                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
+                }?>
+            
+    </div>
+    <div class="user-box">
+      <label for="mail">Last Name:</label><br>
+            <input type="email" id="mail" name="mail" 
+            value="<?php
+            
+            if (isset($_POST['mail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['mail']))){
+                $mail = Pass_input($_POST['mail']);
+                echo $mail;
+                $mailSet = true;
+            }?>">
+            
+                <?php 
+                if (!empty($_POST)){
+                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
+                }?>
+            
+    </div>
+    <div class="user-box">
+      <label for="mail">Email:</label><br>
+            <input type="email" id="mail" name="mail" 
+            value="<?php
+            
+            if (isset($_POST['mail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['mail']))){
+                $mail = Pass_input($_POST['mail']);
+                echo $mail;
+                $mailSet = true;
+            }?>">
+            
+                <?php 
+                if (!empty($_POST)){
+                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
+                }?>
+            
+    </div>
+    <div class="user-box">
+      <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" 
+            value="<?php
+            //Between 8-12 alphanumeric, include at least 1 number and exactly 1 special character
+            if (isset($_POST['password']) && preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', Pass_Input($_POST['password']))){
+                $password = Pass_input($_POST['password']);
+                echo $password;
+                $passwordSet = true;
+            }?>">
+                <?php 
+                if (!empty($_POST)){
+                    if(!$passwordSet)echo'<p style="color: red;">Invalid password Input!</p>';
+                }?>
+            
+    </div>    
+    
+
+      <span></span><button type="submit" class="hero-btn">Login</button>
+</div> -->
     <div class="box-form">
         <h1>Registration form</h1>
         <form action="registration.php" method="post">

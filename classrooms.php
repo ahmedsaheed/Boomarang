@@ -28,14 +28,14 @@ if (!isset($_SESSION['user_email'])) {
 </head>
 <body>    
 <section class="classroom">
-        <br><center><h1 style="color: black;">Classrooms Information</h1></center>
-        <center><p style="color: black; padding: 25px 50px 5px 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus ex quis ligula condimentum, nec viverra quam bibendum. Nullam eleifend vel quam non dapibus. Ut vehicula est sem, non mattis velit rhoncus scelerisque. Ut non est tristique lorem porttitor sollicitudin. Quisque facilisis mauris sed lectus elementum, molestie ullamcorper felis sollicitudin. Ut sit amet est vitae mauris mollis viverra. <br><br>Vivamus a congue nulla, non aliquet ante.
+        <br><center><h1 style="color: white;"></h1></center>
+        <center><p style="color: white; padding: 25px 50px 5px 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus ex quis ligula condimentum, nec viverra quam bibendum. Nullam eleifend vel quam non dapibus. Ut vehicula est sem, non mattis velit rhoncus scelerisque. Ut non est tristique lorem porttitor sollicitudin. Quisque facilisis mauris sed lectus elementum, molestie ullamcorper felis sollicitudin. Ut sit amet est vitae mauris mollis viverra. <br><br>Vivamus a congue nulla, non aliquet ante.
                 Nulla non luctus dolor, quis laoreet erat. Sed imperdiet auctor feugiat. Phasellus ornare quis nisi ac feugiat. Curabitur vestibulum efficitur mauris, eget tempus risus porttitor id. In feugiat gravida sem, at molestie libero efficitur at. Fusce at ligula in sem semper mattis eu quis est. Vivamus imperdiet tortor eu ex posuere euismod.</p></center>
         
 </section>
         <div class = "GridBrick5" id="Drogheda5"><p></p></div>
         <div class = "GridBrick6" id="Drogheda6"></div>
-        <center><h2> Gallery </h2></center>
+        <center><h2 style="color: white;"> Gallery </h2></center>
         <div class = "GridBrick6Sub">
             <div id = "GalleryOuterContainer">
                 <div id="GalleryInnerContainer">

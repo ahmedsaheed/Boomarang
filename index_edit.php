@@ -134,7 +134,7 @@ $picture = '';
                             picture_path = '$picture'
                             WHERE feature_ID = '$id';";
                             mysqli_query($conn,$sql);
-                            echo'<h2>Feature box updated successfully!</h2>';
+                            echo'<h2 style="color:white;">Feature box updated successfully!</h2>';
                         }else{echo "Not Updated";}
                     }?>
                     <!------------END Database interaction----------->

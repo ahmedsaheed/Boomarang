@@ -13,12 +13,22 @@ include_once('subHeader.php');
 <section class="testimonials">
     <h1 style="color: white;">What People Are Saying About Us</h1>
     <p>For us, your opinion counts.</p>
+    <?php 
+    $query = "SELECT * FROM testimonial where approved = '1' ;";
+    $result = mysqli_query($conn, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        //print_r($row);
+        $name = $row['name'];
+        $service = $row['service'];
+        $date = $row['date'];
+        $message = $row['message']; 
+    ?>
     <div class="row">
         <div class="testimonials-col">
             <img src="images/person2.jpg">
             <div>
-                <p>Online-Skate is just the best! I bought my board there last week and it is really good.</p>
-                    <h3>Joe Marriott</h3>
+                    <p><?php echo $message;?></p>
+                    <h3><?php echo $name.'--'.$service.'--'.$date;?></h3>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -26,6 +36,7 @@ include_once('subHeader.php');
                     <i class="far fa-star"></i> 
             </div>
         </div>
+        <?php } ?>
         <div class="testimonials-col">
             <img src="images/person2.jpg">
             <div>

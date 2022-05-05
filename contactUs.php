@@ -81,7 +81,7 @@ $message = '';
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$nameSet)echo'<p>Invalid name Input!</p>';
+                    if(!$nameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
             </div>
 
@@ -99,7 +99,7 @@ $message = '';
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$mailSet)echo'<p>Invalid email Input!</p>';
+                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
                 }?>
             </div>
 
@@ -116,7 +116,7 @@ $message = '';
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$phoneSet)echo'<p>Invalid phone Input!</p>';
+                    if(!$phoneSet)echo'<p style="color: red;">Invalid phone Input!</p>';
                 }?>
             </div>
 
@@ -133,7 +133,7 @@ $message = '';
             <div class='invalid'>
                 <?php 
                 if (!empty($_POST)){
-                    if(!$messageSet)echo'<p>Invalid message Input!</p>';
+                    if(!$messageSet)echo'<p style="color: red;">Invalid message Input!</p>';
                 }?>
             </div>
 

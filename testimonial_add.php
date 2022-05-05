@@ -39,7 +39,7 @@ $message = '';
     <div class="row">
         <div class="blog-left">  
             <div class="comment-box">
-                <h3>Hello <?php echo $_SESSION['name'];?>, Leave your testimonial below.</h3>
+                <h3 style="color: white;">Hello <?php echo $_SESSION['name'];?>, Leave your testimonial below.</h3>
                 
                 <form class="comment-form" action="testimonial_add.php" method="post">
 
@@ -54,7 +54,7 @@ $message = '';
                     <div class='invalid'>
                         <?php 
                         if (!empty($_POST)){
-                            if(!$serviceNameSet)echo'<p>Invalid service Input!</p>';
+                            if(!$serviceNameSet)echo'<p style="color: white;">Invalid service Input!</p>';
                         }?>
                     </div>
 
@@ -70,7 +70,7 @@ $message = '';
                     <div class='invalid'>
                         <?php 
                         if (!empty($_POST)){
-                            if(!$messageSet)echo'<p>Invalid message Input!</p>';
+                            if(!$messageSet)echo'<p style="color: white;">Invalid message Input!</p>';
                         }?>
                     </div>
 
@@ -85,12 +85,12 @@ $message = '';
                         if($serviceNameSet && $messageSet){
 
                             //statement to insert parent data into database
-                            $sql = "INSERT INTO testimonial (name, service, date, message)
-                            VALUES ('$name', '$serviceName', '$date', '$message');";
+                            $sql = "INSERT INTO testimonial (name, service, date, message, approved)
+                            VALUES ('$name', '$serviceName', '$date', '$message','0' );";
                             mysqli_query($conn,$sql);
                             mysqli_close($conn);
 
-                            echo'<h2>Testimonial sent successfully!</h2>';
+                            echo'<h2 style="color: white;">Testimonial sent successfully!</h2>';
                         }
                     }?>
                     <!------------END Database interaction----------->

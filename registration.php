@@ -115,89 +115,14 @@ $feePricePreschool = $row['price'];
 
 <!------------Form Box----------->
 <section class="main">
-<!-- <div class="login-box">
-  <h2>Login</h2>
-  <form action="login.php" method="post">
+<div class="login-box">
+  <h2>Register</h2>
+  <form action="registration.php" method="post">
     <div class="user-box">
-      <label for="mail">First Name:</label><br>
-            <input type="email" id="mail" name="mail" 
-            value="<?php
-            
-            if (isset($_POST['mail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['mail']))){
-                $mail = Pass_input($_POST['mail']);
-                echo $mail;
-                $mailSet = true;
-            }?>">
-            
-                <?php 
-                if (!empty($_POST)){
-                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
-                }?>
-            
-    </div>
-    <div class="user-box">
-      <label for="mail">Last Name:</label><br>
-            <input type="email" id="mail" name="mail" 
-            value="<?php
-            
-            if (isset($_POST['mail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['mail']))){
-                $mail = Pass_input($_POST['mail']);
-                echo $mail;
-                $mailSet = true;
-            }?>">
-            
-                <?php 
-                if (!empty($_POST)){
-                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
-                }?>
-            
-    </div>
-    <div class="user-box">
-      <label for="mail">Email:</label><br>
-            <input type="email" id="mail" name="mail" 
-            value="<?php
-            
-            if (isset($_POST['mail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['mail']))){
-                $mail = Pass_input($_POST['mail']);
-                echo $mail;
-                $mailSet = true;
-            }?>">
-            
-                <?php 
-                if (!empty($_POST)){
-                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
-                }?>
-            
-    </div>
-    <div class="user-box">
-      <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" 
-            value="<?php
-            //Between 8-12 alphanumeric, include at least 1 number and exactly 1 special character
-            if (isset($_POST['password']) && preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', Pass_Input($_POST['password']))){
-                $password = Pass_input($_POST['password']);
-                echo $password;
-                $passwordSet = true;
-            }?>">
-                <?php 
-                if (!empty($_POST)){
-                    if(!$passwordSet)echo'<p style="color: red;">Invalid password Input!</p>';
-                }?>
-            
-    </div>    
-    
-
-      <span></span><button type="submit" class="hero-btn">Login</button>
-</div> -->
-    <div class="box-form">
-        <h1>Registration form</h1>
-        <form action="registration.php" method="post">
-
-            <!------------Parent first name----------->
-            <label for="parentFirstName">Parent First Name:</label>
+      <label for="parentFirstName">First Name:</label><br>
             <input type="text" id="parentFirstName" name="parentFirstName" 
             value="<?php
-             
+            
             if (isset($_POST['parentFirstName']) && preg_match('/^[a-z]{3,25}$/i', Pass_Input($_POST['parentFirstName']))){
                 $parentFirstName = ucfirst(strtolower(Pass_input($_POST['parentFirstName'])));
                 echo $parentFirstName;
@@ -208,13 +133,13 @@ $feePricePreschool = $row['price'];
                 if (!empty($_POST)){
                     if(!$parentFirstNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
-            </div>
-
-            <!------------Parent  last name----------->
-            <label for="parentLastName">Parent Last Name:</label>
+    </div>
+    
+    <div class="user-box">
+      <label for="parentLastName">Last Name:</label><br>
             <input type="text" id="parentLastName" name="parentLastName" 
             value="<?php
-             
+            
             if (isset($_POST['parentLastName']) && preg_match('/^[a-z]{3,25}$/i', Pass_Input($_POST['parentLastName']))){
                 $parentLastName = ucfirst(strtolower(Pass_input($_POST['parentLastName'])));
                 echo $parentLastName;
@@ -225,50 +150,13 @@ $feePricePreschool = $row['price'];
                 if (!empty($_POST)){
                     if(!$parentLastName)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
-            </div>
-            
+    </div>
 
-            <!------------email----------->
-            <label for="mail">Email:</label>
-            <input type="email" id="mail" name="mail" 
-            value="<?php
-             
-            if (isset($_POST['mail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['mail']))){
-                $mail = Pass_input($_POST['mail']);
-                echo $mail;
-                $mailSet = true;
-            }?>"><br>
-            <div class='invalid'>
-                <?php 
-                if (!empty($_POST)){
-                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
-                }?>
-            </div>
-
-
-            <!------------password----------->
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" 
-            value="<?php
-            //Between 8-12 alphanumeric, include at least 1 number and exactly 1 special character
-            if (isset($_POST['password']) && preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', Pass_Input($_POST['password']))){
-                $password = Pass_input($_POST['password']);
-                echo $password;
-                $passwordSet = true;
-            }?>"><br>
-            <div class='invalid'>
-                <?php 
-                if (!empty($_POST)){
-                    if(!$passwordSet)echo'<p style="color: red;">Invalid password Input! Try something stronger 8-12 in length.</p>';
-                }?>
-            </div>
-
-
-            <!------------child  first name----------->
-            <label for="childFirstName">Child First Name:</label>
+    <div class="user-box">
+      <label for="childFirstName">Child First Name:</label><br>
             <input type="text" id="childFirstName" name="childFirstName" 
             value="<?php
-             
+            
             if (isset($_POST['childFirstName']) && preg_match('/^[a-z]{3,25}$/i', Pass_Input($_POST['childFirstName']))){
                 $childFirstName = ucfirst(strtolower(Pass_input($_POST['childFirstName'])));
                 echo $childFirstName;
@@ -279,14 +167,13 @@ $feePricePreschool = $row['price'];
                 if (!empty($_POST)){
                     if(!$childFirstNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
-            </div>
+    </div>
 
-
-            <!------------child  last name----------->
-            <label for="childLastName">Child Last Name:</label>
+    <div class="user-box">
+      <label for="childLastName">Child Last Name:</label><br>
             <input type="text" id="childLastName" name="childLastName" 
             value="<?php
-             
+            
             if (isset($_POST['childLastName']) && preg_match('/^[a-z]{3,25}$/i', Pass_Input($_POST['childLastName']))){
                 $childLastName = ucfirst(strtolower(Pass_input($_POST['childLastName'])));
                 echo $childLastName;
@@ -297,11 +184,10 @@ $feePricePreschool = $row['price'];
                 if (!empty($_POST)){
                     if(!$childLastNameSet)echo'<p style="color: red;">Invalid name Input!</p>';
                 }?>
-            </div>
+    </div>
 
-
-            <!------------category----------->
-            <label for="category">Category:</label>
+    <div class="user-box">
+    <label for="category">Category:</label><br>
             <select name="category" id="category">
                 <option value="">None</option>
                 <option value="babies"<?php if(isset($_POST['category'])&& $_POST['category']=="babies") echo 'selected="selected"',$categorySet = true;?>>babies</option>
@@ -320,9 +206,10 @@ $feePricePreschool = $row['price'];
                     }
                 ?>
             </div>
+    </div>
 
-            <!------------day care need----------->
-            <label for="dayCare">Day Care:</label>
+    <br><div class="user-box">
+    <label for="dayCare">Day Care:</label><br>
             <select name="dayCare" id="dayCare" >
                 <option value="">None</option>
                 <option value="halfDay"<?php if(isset($_POST['dayCare'])&& $_POST['dayCare']=="halfDay") echo 'selected="selected"',$dayCareSet = true;?>>Half day care</option>
@@ -342,10 +229,50 @@ $feePricePreschool = $row['price'];
                     }
                 ?>
             </div>  
+
+    </div>
+
+    <div class="user-box">
+      <label for="mail">Email:</label><br>
+            <input type="email" id="mail" name="mail" 
+            value="<?php
             
+            if (isset($_POST['mail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['mail']))){
+                $mail = Pass_input($_POST['mail']);
+                echo $mail;
+                $mailSet = true;
+            }?>">
             
-            <button type="submit" class="hero-btn ">Register</button><p></p>
-        </form>
+                <?php 
+                if (!empty($_POST)){
+                    if(!$mailSet)echo'<p style="color: red;">Invalid email Input!</p>';
+                }?>
+    </div>
+
+    <div class="user-box">
+      <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" 
+            value="<?php
+            //Between 8-12 alphanumeric, include at least 1 number and exactly 1 special character
+            if (isset($_POST['password']) && preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', Pass_Input($_POST['password']))){
+                $password = Pass_input($_POST['password']);
+                echo $password;
+                $passwordSet = true;
+            }?>">
+                <?php 
+                if (!empty($_POST)){
+                    if(!$passwordSet)echo'<p style="color: red;">Invalid password Input!</p>';
+                }?>
+            
+    </div>    
+    
+
+      <span></span><button type="submit" class="hero-btn">Register</button>
+      <center><a href="login.php"><span></span><span></span><span></span><span></span><p style="color:white;">Already Have An Account?<br> Click here to login </p></a></center>
+
+    </form>
+    </div>
+   
         
 
         <!------------Database interaction----------->
@@ -364,8 +291,8 @@ $feePricePreschool = $row['price'];
                         while($row = mysqli_fetch_array($result)){
                             $emailInTable = $row['email'];
                             if($emailInTable == $mail){
-                                echo '<div class="invalid"><h2 style="color: red;">Registration failed!</h2></div>';
-                                echo '<div class="invalid" style="color: red;">Email already registered</div>';
+                                echo '<center><div class="invalid"><p style="color: red;">Registration failed!</hp></div><center>';
+                                echo '<center><div class="invalid" style="color: red;">Email already registered</div></center>';
                                 $duplicatedMail = true;
                             } 
                         }
@@ -439,7 +366,7 @@ $feePricePreschool = $row['price'];
 
                     
                             // echo'<h2>Registration successfully!</h2>';
-                            echo'<h3>A Confirmation Email has been sent to you</h3>';
+                            echo'<p style = "color: white;">A Confirmation Email has been sent to you</p>';
                         }
                 }
 
@@ -482,8 +409,8 @@ $feePricePreschool = $row['price'];
                                 $sql = "DELETE FROM intent;";
                                 mysqli_query($conn, $sql);
                                  mysqli_close($conn);
-                                echo "<h3 style='color:green; text-align:center;'>You have been verified successfully, you can now proceed to login.</h3>";
-                                echo " <a href='login.php'><h3 style='color:black; text-align:center;'>Click to Login</h3></a>";
+                                echo "<p style='color:green; text-align:center;'>You have been verified successfully, you can now proceed to login.</p>";
+                                echo " <center><a href='login.php'><span></span><span></span><span></span><span></span><p style='color:white; text-align:center;'>Click to Login</p></a></center>";
                               }else{
                                   
                                 $sql = "DELETE FROM intent;";

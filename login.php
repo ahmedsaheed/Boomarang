@@ -33,6 +33,8 @@ $password = '';
 
 
 <!------------Form Box----------->
+<br><br><br>
+
 <section class="main">
 <div class="login-box">
   <h2>Login</h2>
@@ -130,9 +132,8 @@ $password = '';
         
     </div>
 </section>
-<br><br><br><br><br><br><br><br><br><br>
 
-
+<br><br><br>
 
 
 <?php

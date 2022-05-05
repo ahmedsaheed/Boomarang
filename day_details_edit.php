@@ -100,29 +100,40 @@ $date = date("Y-m-d");
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-            $query = "SELECT * FROM day WHERE date = '$date' AND child_ID = '$childID' ;";
-            $result = mysqli_query($conn, $query);
-            
-            //if record already exists today
-            if((mysqli_num_rows($result) == 1)) {
-                //statement to update child details
-                $sql = "UPDATE day SET 
-                        temperature = '$temperature',
-                        breakfast = '$breakfast',
-                        lunch = '$lunch',
-                        activities = '$activity'
-                        WHERE date = '$date' AND child_ID = '$childID' ;";
-                        mysqli_query($conn,$sql);
-                        echo'<h2>Details updated successfully!</h2>';
+            //if child id exists go ahead
+            $sql = "SELECT * FROM child WHERE child_ID = '$childID'";
+            $result  = mysqli_query($conn,$sql);
+            if(mysqli_num_rows($result) == 1){
+
+                $query = "SELECT * FROM day WHERE date = '$date' AND child_ID = '$childID' ;";
+                $result = mysqli_query($conn, $query);
+                //if record already exists today
+                if((mysqli_num_rows($result) == 1)) {
+                    //statement to update child details
+                    $sql = "UPDATE day SET 
+                            temperature = '$temperature',
+                            breakfast = '$breakfast',
+                            lunch = '$lunch',
+                            activities = '$activity'
+                            WHERE date = '$date' AND child_ID = '$childID' ;";
+                            mysqli_query($conn,$sql);
+                            echo'<h2>Details updated successfully!</h2>';
+                }
+                else{
+                    //statement to INSERT child details if it doesnt exist
+                    $sql = "INSERT INTO day (date, child_ID, temperature, breakfast, lunch, activities)
+                    VALUES ('$date', '$childID', '$temperature', '$breakfast', '$lunch', '$activity');";
+                    mysqli_query($conn,$sql);
+                    echo'<h2>Details inserted successfully!</h2>';
+                }
 
             }
             else{
-                //statement to INSERT child details if it doesnt exist
-                $sql = "INSERT INTO day (date, child_ID, temperature, breakfast, lunch, activities)
-                VALUES ('$date', '$childID', '$temperature', '$breakfast', '$lunch', '$activity');";
-                mysqli_query($conn,$sql);
-                echo'<h2>Details inserted successfully!</h2>';
+                echo'<h2>Child ID not Found!</h2>';
             }
+
+                
+            
             
         }?>
         <!------------END Database interaction----------->

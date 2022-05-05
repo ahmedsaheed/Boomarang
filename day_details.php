@@ -66,7 +66,7 @@ else{
 
 
             <!-----------Date of deatils------------>
-            <label for="date">Date of First Registration:</label>
+            <label for="date">Filter date:</label>
             <input type="date" id="date" name="date" 
             value="<?php
             //date must be YYYY-MM-DD

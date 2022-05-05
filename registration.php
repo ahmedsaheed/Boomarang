@@ -349,7 +349,7 @@ $feePricePreschool = $row['price'];
                             
                             Please click this link to activate your account:
                             
-                            <a href="http://localhost:8888/registration.php?email='.$mail.'&code='.$codes.'">Verify Email!</a>
+                            <a href="http://localhost:8888/registration.php?email='.$mail.'&code='.$codes.'">Verify Email!</a>                            
                             ';
                             $xmail->send();
                             }catch (Exception $e)

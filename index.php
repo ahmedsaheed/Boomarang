@@ -1,7 +1,7 @@
 <?php 
 session_start(); 
 //Include connection file
-include_once '../../../include/connection.php'; ?>
+include_once 'include/connection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,14 +12,14 @@ include_once '../../../include/connection.php'; ?>
     <script src="https://kit.fontawesome.com/28528889ff.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+    <link rel="icon" type="image/x-icon" href="images/logo.ico">
     <script defer src="script.js"></script>
     <title>Boomerang</title>
 </head>
 <body>
     <section class="header">
             <nav>
-                <a href="index.php"><img src="images/logo.PNG"></a>
+                <a href="index.php"><img src="images/logo.png"></a>
                 <div class="nav-links" id="navLinks">
                     <i class="fas fa-times" onclick="hideMenu()"></i>
                     <ul>

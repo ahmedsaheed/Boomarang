@@ -44,12 +44,12 @@ $feePrice = '';
     <div class="row">
         <div class="blog-left">  
             <div class="comment-box">
-                <h3 style="color:white;">Hello <?php echo $_SESSION['name'];?>, update the fields below regarding the fee prices.</h3>
+                <h3>Hello <?php echo $_SESSION['name'];?>, update the fields below regarding the fee prices.</h3>
                 
                 <form class="comment-form" action="registration_edit.php" method="post">
                     
                 <!------------Fuel Type----------->
-                <label style="color:white;" for="category"> Category:</label>
+                <label for="category">Category:</label>
                 <select name="category" id="category">
                     <option value="">None</option>
                     <option value="babies"<?php if(isset($_POST['category'])&& $_POST['category']=="babies") echo 'selected="selected"',$categorySet = true;?>>babies</option>

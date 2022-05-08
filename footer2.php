@@ -1,3 +1,20 @@
+<?php
+//Include connection file
+//include_once '../../include/connection.php';
+include_once 'connection.php'; 
+?>
+
+<?php
+$EmailSet = false;
+$Subcribemail = '';
+// function pass_input($data) {
+//     $data = trim($data);
+//     $data = stripslashes($data);
+//     $data = strip_tags($data);
+//     return $data;
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -87,10 +104,43 @@
                                 <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
                             </div>
                             <div class="subscribe-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Email Address">
-                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                <form action="<?= $_SERVER['PHP_SELF'] ?>" method= "post" >
+                                
+                                    <input type="email" id="Submail" name="Submail"  placeholder="Email Address"
+                                        value="<?php
+                                        
+                                        
+                                        if (isset($_POST['Submail']) && preg_match('/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', Pass_Input($_POST['Submail']))){
+                                            $Subcribemail = Pass_input($_POST['Submail']);
+                                            echo $Subcribemail;
+                                            $EmailSet = true;
+                                        }?>">
+                                        
+                                            <?php 
+                                            if (!empty($_POST)){
+                                                if(!$EmailSet)echo'<center><p style="color: red;">Invalid email Input!</p></center>';
+                                            }?>
+
+                                            <button type="submit" class="hero-btn">Subscribe</button>
                                 </form>
+                                                             <!------------Database interaction----------->
+                                                <?php
+                                                if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+                                                    // create table subscribers(
+                                                    // email varchar(50) NOT NULL
+                                                    //     );
+
+                                                    //check if ALL user data is ready to go to database                
+                                                    if($EmailSet){
+
+                                                        //statement to UPDATE feature box
+                                                        $sql = "INSERT into subscribers (email) VALUES ('$Subcribemail');";
+                                                        mysqli_query($conn,$sql);
+                                                        echo '<center><p style="color: white;">🎉🎉Thanks for subscribing!🎉🎉</p></center>';
+                                                   }
+                                                }?>
+                                                <!------------END Database interaction----------->
+
                             </div>
                         </div>
                     </div>

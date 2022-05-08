@@ -2,7 +2,14 @@
 session_start(); 
 //Include connection file
 //include_once '../../include/connection.php';
- include_once 'connection.php'; ?>
+ include_once 'connection.php';
+ function pass_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = strip_tags($data);
+    return $data;
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

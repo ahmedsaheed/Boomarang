@@ -25,12 +25,6 @@ $pictureSet = false;
 
 
 //Function to sanitize user input
-function pass_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = strip_tags($data);
-    return $data;
-}
 
 //Declaring variables that will store final database values
 $id = '';

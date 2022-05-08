@@ -404,7 +404,7 @@ $feePricePreschool = $row['price'];
                                 mysqli_query($conn, $sql);
                                  mysqli_close($conn);
                                 echo "<p style='color:green; text-align:center;'>You have been verified successfully, you can now proceed to login.</p>";
-                                echo " <center><a href='login.php'><span></span><span></span><span></span><span></span><p style='color:white; text-align:center;'>Click to Login</p></a></center>";
+                                //echo " <center><a href='login.php'><span></span><span></span><span></span><span></span><p style='color:white; text-align:center;'>Click to Login</p></a></center>";
                               }else{
                                   
                                 $sql = "DELETE FROM intent;";

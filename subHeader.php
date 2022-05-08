@@ -51,6 +51,8 @@ session_start();
                         echo '<li><a href="day_details_edit.php">DAY DETAILS EDIT</a></li>';
                         echo '<li><a href="testimonial_manage.php">TESTIMONIAL MANAGE</a></li>';
                         echo '<li><a href="contact_us_manage.php">CONTACT US MANAGE</a></li>';
+                        echo '<li><a href="newsletter.php">NEWS LETTER</a></li>';
+
                     }
                 }
                 //display login page only if not logged in
